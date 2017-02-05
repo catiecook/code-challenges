@@ -1,3 +1,7 @@
-<h1>hello world</h1>
+<h3> <%= @greeting %></h3>
 
-<p> <%= @greeting %></p>
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:base_word) %>
+  <%= submit_tag("Submit") %>
+<% end %>

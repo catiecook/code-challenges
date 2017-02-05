@@ -1,7 +1,6 @@
 class AnagramController < ApplicationController
 
-  def new
-    puts "load file"
+  def new_anagram
     # anagrams = Hash.new()
     # # structure
     # anagrams[:key_aka_user_word, word_from_dictionary]
