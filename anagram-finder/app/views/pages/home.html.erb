@@ -1,6 +1,6 @@
 <h3> <%= @greeting %></h3>
 
-<%= form_tag("/search", method: "get") do %>
+<%= form_tag("/", method: "get") do %>
   <%= label_tag(:q, "Search for:") %>
   <%= text_field_tag(:base_word) %>
   <%= submit_tag("Submit") %>
