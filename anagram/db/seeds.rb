@@ -17,23 +17,12 @@ methods will be to run that keyWord into an Anagram method that first checks for
 =end
 
 
-IO.foreach('../lib/assets/dictionary.txt') do |l|
-  baseWord = l.strip #remove whitespace
-  keyWord = word.split('').sort.join # alphebetically sort letters
-  anagram = Anagram_Method_Goes_Here(keyWord)
-
-end
+# IO.foreach('../lib/assets/dictionary.txt') do |l|
+#   baseWord = l.strip #remove whitespace
+#   keyWord = word.split('').sort.join # alphebetically sort letters
+#   anagram = Anagram_Method_Goes_Here(keyWord)
+# end
 
 =begin
-
-IO.foreach('./specs/dictionary.txt') do |line|
-  word = line.strip
-  key = word.split('').sort.join
-  anagram = Anagram.find_or_create_by(key: key)
-  # if the word is already in the array, don't add it again
-  if !anagram.words.include?(word)
-      anagram.words.push(word)
-  end
-  anagram.save
 
 =end

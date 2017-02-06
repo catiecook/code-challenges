@@ -12,12 +12,21 @@ class PagesController < AnagramController
 
   def get_word
     base_word = params['base_word']
-    puts "BASE WORD *******" + base_word
     arrange_word(base_word)
+  end
+
+  def arrange_word(base_word)
+    # remove white spage
+    base_word = base_word.strip
+    # sort letters alphebetically
+    sorted_base_word = base_word.downcase.split('').sort.join
+    # call anagram function
+    new_anagram(base_word, sorted_base_word)
   end
 
   def new_anagram(base_word, sorted_base_word)
 
+    hash = Hash.new
     anagrams = Array.new
 
     File.open("app/assets/files/dictionary.txt", 'r') do |file|
@@ -29,25 +38,14 @@ class PagesController < AnagramController
 
           if sorted_base_word == sorted
             anagrams.push(original)
-            puts anagrams
           end
-
         end
-
-        # puts original + " " + sorted if index < 100
-        # anagrams = { original: original, sorted: sorted}
-        # puts anagrams
+        hash[base_word] = anagrams
+        @anagrams = hash[base_word]
 
       end
     end
   end
 
-  def arrange_word(base_word)
 
-    base_word = base_word.strip
-    sorted_base_word = base_word.downcase.split('').sort.join
-    puts "ORIGINAL: " + base_word + " SORTED: " + sorted_base_word
-
-    new_anagram(base_word, sorted_base_word)
-  end
 end
