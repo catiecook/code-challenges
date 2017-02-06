@@ -2,12 +2,18 @@ require 'json'
 
 class PagesController < AnagramController
 
-  def home
-    puts get_word
-    puts "*** IN PAGES CONTROLLER ***"
+  def index
     @greeting = "Anagram Finder"
-    get_word
+    if params['base_word']
+      puts get_word
+      puts "*** IN PAGES CONTROLLER ***"
+    end
+  end
 
+  def search
+    puts "in search route"
+    get_word
+    render json: @anagrams
   end
 
   def get_word
@@ -46,6 +52,4 @@ class PagesController < AnagramController
       end
     end
   end
-
-
 end

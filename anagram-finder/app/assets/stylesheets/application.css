@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+ @import url('https://fonts.googleapis.com/css?family=Oswald:300,700');
+
+body {
+  background-color: hsla(173, 36%, 75%, 0.73);
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 900;
+}
