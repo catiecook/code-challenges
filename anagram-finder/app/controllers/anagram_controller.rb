@@ -1,3 +1,0 @@
-class AnagramController < ApplicationController
-
-end

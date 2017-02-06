@@ -1,6 +1,6 @@
 require 'json'
 
-class PagesController < AnagramController
+class PagesController < ApplicationController
 
   def index
     @greeting = "Anagram Finder"
@@ -51,5 +51,9 @@ class PagesController < AnagramController
 
       end
     end
+  end
+
+  def show_anagrams
+    @found = "Anagrams go here"
   end
 end
