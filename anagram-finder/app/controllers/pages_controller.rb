@@ -4,10 +4,6 @@ class PagesController < ApplicationController
 
   def index
     @greeting = "Anagram Finder"
-    if params['base_word']
-      puts get_word
-      puts "*** IN PAGES CONTROLLER ***"
-    end
   end
 
   def search
@@ -16,7 +12,13 @@ class PagesController < ApplicationController
     render json: @anagrams
   end
 
+  # def search:word
+  #   @greeting = "Anagram Finder"
+  #   @found = "Anagrams go here"
+  # end
+
   def get_word
+    # get word from form
     base_word = params['base_word']
     arrange_word(base_word)
   end
@@ -54,6 +56,7 @@ class PagesController < ApplicationController
   end
 
   def show_anagrams
+    @greeting = "Anagram Finder"
     @found = "Anagrams go here"
   end
 end
