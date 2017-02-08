@@ -5,14 +5,5 @@ angular.module('gif', ['ngRoute','ngAnimate', 'ngMaterial', 'ngAria'])
         templateUrl: 'partials/index.html',
         controller: 'MainController'
     })
-    .when('/start', {
-        templateUrl: 'partials/start.html',
-        controller: 'MainController'
-    })
-    .when('/end', {
-        templateUrl: 'partials/end.html',
-        controller: 'MainController'
-    })
-
     $locationProvider.html5Mode(true);
 })
