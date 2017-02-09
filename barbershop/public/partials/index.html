@@ -136,24 +136,30 @@
 </div>
 
 <!-- Leave -->
-<div class="content"
-     ng-show="conditionals.leave">
-
-  <h3 id="element7">That's a weird choice.</h3>
+<div ng-show="conditionals.leave">
+  <section class="content">
+    <h3 id="element7">That's a weird choice.</h3>
     <p> Game Over! <detail class="points">Total Points: {{points}}</detail></p>
     <p>Here's a recap of your day: </p>
-    <md-card class="md-padding"
-             layout-xs="column"
-             layout="row">
-    <md-card-content ng-repeat="gif in allGifs"
-                     flex="30"
-                     layout-padding>
+  </section>
+
+  <md-gridlist md-cols-xs="1"
+               md-cols-sm="2"
+               md-cols-md="4"
+               md-cols-gt-md="6"
+               md-row-height-gt-md="1:1"
+               md-row-height="2:2"
+               md-gutter="12px"
+               md-gutter-gt-sm="8px"
+               layout-align="row">
+    <md-grid-tile ng-repeat="gif in allGifs"
+                  flex="30"
+                  layout-padding>
       <img ng-src={{gif}}
            class="md-card-image">
-    </md-card-content>
-  </md-card>
+    </md-grid-tile>
+  </md-gridlist>
 </div>
-
 <!-- West-->
 <div class="content"
      ng-show="conditionals.west">

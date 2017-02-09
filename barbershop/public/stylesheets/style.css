@@ -9,17 +9,13 @@ body {
   align-items: center;
   justify-content: center;
   overflow: visible;
-  height: auto;
+  height: 100vmin;
 }
 
 md-content {
   background-color: black;
   color: white;
   width: 100%;
-}
-
-md-card {
-  background-color: black;
 }
 
 input {
@@ -29,20 +25,12 @@ input {
   padding: 1%;
   border: none;
   border-bottom: 1px solid green;
-  /*width: 90%;*/
+  width: 50%;
 }
 
 form {
-  flex-direction: row;
-  align-self: center;
-  align-items: center;
-  width: 100%;
-}
-
-.content {
-  background-color: black;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   align-content: center;
   justify-content: center;
@@ -51,11 +39,22 @@ form {
 
 img {
   max-width: 500px;
-  max-height: 300px
+  max-height: 300px;
 }
 
 p, h3 {
   max-width: 600px;
+}
+
+
+.content {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  width: 100vmin;
 }
 
 .points {
