@@ -2,7 +2,7 @@ angular.module('gif')
 
 .controller('MainController', function($scope, mainService, $timeout, $mdDialog) {
     $scope.tempGif = "";
-    $scope.allGifs = [];
+    $scope.allGifs = ["https://media3.giphy.com/media/HVr4gFHYIqeti/giphy-downsized.gif"];
     $scope.start = true;
     $scope.end = false;
     $scope.first = false;
@@ -24,7 +24,10 @@ angular.module('gif')
       pawn: false,
       keep: false,
       coffee: false,
-      end: false
+      end: false,
+      spaceship: false,
+      find: false,
+      find: false
     };
 
     $scope.start = function(cont) {
@@ -89,7 +92,7 @@ angular.module('gif')
         case "stay":
           $scope.conditionals.stay = true;
           $scope.points += 5;
-          term = "sunbathe"
+          term = "space abduction"
           break;
         case "pawn":
           $scope.conditionals.pawn = true;
@@ -114,8 +117,20 @@ angular.module('gif')
           $scope.points += 5;
           term = "puppy run free"
           break;
+        case "spaceship":
+          $scope.conditionals.spaceship = true;
+          $scope.points += 30;
+          break;
+        case "stairs":
+          $scope.conditionals.stairs = true;
+          $scope.points += 10;
+          break;
+        case "find":
+          $scope.conditionals.find = true;
+          $scope.points += 12;
+          term = "detective sherlock"
+          break;
       }
-
 
       $scope.first = false;
 
@@ -126,11 +141,18 @@ angular.module('gif')
           $scope.tempGif = data.data[0].images.downsized.url;
           $scope.$apply();
           $scope.allGifs.push(data.data[0].images.downsized.url);
-        } else {
-          let num = Math.floor(Math.random() * 10)
-          $scope.tempGif = data.data[num].images.downsized.url;
-          $scope.$apply();
-          $scope.allGifs.push(data.data[num].images.downsized.url);
+        } else if (term="stay") {
+            let num = Math.floor(Math.random() * 10)
+            $scope.tempGif = data.data[num].images.downsized.url;
+            $scope.$apply();
+            $scope.allGifs.push(data.data[num].images.downsized.url);
+            $scope.allGifs.push("https://media1.giphy.com/media/13xT9juWcx5hAs/giphy-downsized.gif");
+          }
+        else {
+            let num = Math.floor(Math.random() * 10)
+            $scope.tempGif = data.data[num].images.downsized.url;
+            $scope.$apply();
+            $scope.allGifs.push(data.data[num].images.downsized.url);
         }
       });
     }
