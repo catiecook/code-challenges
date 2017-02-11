@@ -63,3 +63,7 @@ p, h3 {
 .points {
   color: coral;
 }
+
+a:link {
+  text-decoration: none;
+}
