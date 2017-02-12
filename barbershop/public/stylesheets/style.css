@@ -1,21 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata');
 
 body {
-  font-family: 'Inconsolata', monospace;
-  font-weight: 300;
-  color: white;
-  background-color: black;
   display: flex;
   align-items: center;
   flex-direction: column;
-  overflow: visible;
-  height: 100vmin;
-}
-
-md-content {
+  font-family: 'Inconsolata', monospace;
+  font-weight: 300;
   background-color: black;
   color: white;
-  width: 100%;
+  margin: 0 auto;
 }
 
 input {
@@ -38,7 +31,7 @@ form {
 }
 
 img {
-  max-width: 500px;
+  max-width: 400px;
   max-height: 300px;
 }
 
@@ -46,14 +39,21 @@ p, h3 {
   max-width: 600px;
 }
 
-.content {
+#container {
   background-color: black;
+  height: 100%;
+}
+
+.content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  align-content: center;
   justify-content: center;
-  width: 100vmin;
+  height: auto;
+}
+
+.start {
+  width: 50vw;
 }
 
 .prompt {
@@ -66,4 +66,38 @@ p, h3 {
 
 a:link {
   text-decoration: none;
+}
+
+/********************/
+/* Masonry Addition */
+/********************/
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-content: space-around;
+  width: 95%;
+  margin: 3em auto;
+}
+
+.masonry {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+  justify-content: center;
+  -moz-column-gap: 1.5em;
+  -webkit-column-gap: 1.5em;
+  column-gap: 1.5em;
+  font-size: .85em;
+  padding: 3%;
+}
+
+.item {
+  position: relative;
+  float: left;
+  margin: 1% 1% 0 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }

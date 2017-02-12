@@ -39,6 +39,12 @@ angular.module('gif')
       if(answer === "no") {
         $scope.start = false;
         $scope.end = true;
+        mainService.getGif("whatever")
+        .then((data) => {
+          let num = Math.floor(Math.random() * 10)
+          $scope.tempGif = data.data[num].images.downsized.url;
+          $scope.$apply();
+        })
       }
     };
 
@@ -92,7 +98,7 @@ angular.module('gif')
         case "stay":
           $scope.conditionals.stay = true;
           $scope.points += 5;
-          term = "space abduction"
+          term = "space abducted alien"
           break;
         case "pawn":
           $scope.conditionals.pawn = true;
@@ -141,13 +147,7 @@ angular.module('gif')
           $scope.tempGif = data.data[0].images.downsized.url;
           $scope.$apply();
           $scope.allGifs.push(data.data[0].images.downsized.url);
-        } else if (term="stay") {
-            let num = Math.floor(Math.random() * 10)
-            $scope.tempGif = data.data[num].images.downsized.url;
-            $scope.$apply();
-            $scope.allGifs.push(data.data[num].images.downsized.url);
-            $scope.allGifs.push("https://media1.giphy.com/media/13xT9juWcx5hAs/giphy-downsized.gif");
-          }
+        }
         else {
             let num = Math.floor(Math.random() * 10)
             $scope.tempGif = data.data[num].images.downsized.url;
